@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import {
-  CreateStream,
   DeleteStream,
   StreamList,
   EditStream,
   ShowStream,
+  CreateStream,
 } from "../pages";
 import NavBar from "./NavBar";
 
