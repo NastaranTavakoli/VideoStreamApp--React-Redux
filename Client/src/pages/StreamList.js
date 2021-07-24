@@ -17,7 +17,7 @@ export const StreamList = () => {
     if (auth.isSignedIn) {
       return (
         <div style={{ textAlign: "right" }}>
-          <Link to="/streams/new">
+          <Link to="/streams/create">
             <button className="ui button primary">Create Stream</button>
           </Link>
         </div>
