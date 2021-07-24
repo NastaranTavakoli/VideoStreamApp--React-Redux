@@ -1,7 +1,10 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { useDispatch } from "react-redux";
+import { createStream } from "../actions";
 
 export let CreateStream = props => {
+  const dispatch = useDispatch();
   const renderError = ({ error, touched }) => {
     if (error && touched) {
       return (
@@ -25,6 +28,7 @@ export let CreateStream = props => {
   };
 
   const onSubmit = formValues => {
+    dispatch(createStream(formValues));
     console.log(formValues);
   };
 
