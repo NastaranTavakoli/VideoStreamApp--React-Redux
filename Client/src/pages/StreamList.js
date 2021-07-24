@@ -11,7 +11,7 @@ export const StreamList = () => {
 
   useEffect(() => {
     dispatch(fetchStreams());
-  }, []);
+  }, [dispatch]);
 
   const renderCreateButton = () => {
     if (auth.isSignedIn) {

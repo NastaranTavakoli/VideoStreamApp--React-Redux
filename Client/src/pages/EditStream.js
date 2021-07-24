@@ -7,12 +7,12 @@ import _ from "lodash";
 export const EditStream = props => {
   const streamId = props.match.params.id;
   const streams = useSelector(state => state.streams);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchStream(streamId);
-  }, []);
+    dispatch(fetchStream(streamId));
+  }, [streamId, dispatch]);
 
-  const dispatch = useDispatch();
   const onSubmit = formValues => {
     dispatch(editStream(streamId, formValues));
   };
