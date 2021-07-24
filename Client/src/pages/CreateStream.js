@@ -16,7 +16,6 @@ export let CreateStream = props => {
   };
 
   const renderInput = ({ input, meta, label }) => {
-    console.log(meta.error);
     const className = `field ${meta.error && meta.touched ? "error" : ""}`;
     return (
       <div className={className}>
@@ -29,7 +28,6 @@ export let CreateStream = props => {
 
   const onSubmit = formValues => {
     dispatch(createStream(formValues));
-    console.log(formValues);
   };
 
   return (

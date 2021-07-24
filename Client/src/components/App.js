@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import {
   DeleteStream,
   StreamList,
@@ -8,11 +8,12 @@ import {
   CreateStream,
 } from "../pages";
 import NavBar from "./NavBar";
+import history from "../history";
 
 const App = () => {
   return (
     <div className="ui container">
-      <BrowserRouter>
+      <Router history={history}>
         <div>
           <NavBar />
           <Route path="/" exact component={StreamList} />
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/edit" exact component={EditStream} />
           <Route path="/create" exact component={CreateStream} />
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };

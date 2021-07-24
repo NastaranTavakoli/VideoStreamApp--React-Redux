@@ -26,7 +26,7 @@ export const StreamList = () => {
   };
 
   const renderAdminButtons = stream => {
-    if (auth.userId === stream) {
+    if (auth.userId === stream.userId) {
       return (
         <div className="right floated content">
           <Link className="ui button primary" to={`/streams/edit/${stream.id}`}>
@@ -59,7 +59,8 @@ export const StreamList = () => {
 
   return (
     <div>
-      <div>{renderList(streams)}</div>
+      <h2>Streams</h2>
+      <div className="ui celled list">{renderList(streams)}</div>
       <div>{renderCreateButton()}</div>
     </div>
   );
